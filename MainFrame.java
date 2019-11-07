@@ -60,6 +60,35 @@ public class MainFrame extends JFrame {
 		}
 		return (Math.pow((1 + Math.pow(x, 2)), (1/y))) / (Math.exp(Math.sin(z) + x));
 	}
+	
+	//Вспомогательные методы для добавления кнопок на панель
+		private void addRadioButtonForFormula(String buttonName, final int ID) { 
+			JRadioButton button = new JRadioButton(buttonName);
+			button.addActionListener(new ActionListener() { 
+				public void actionPerformed(ActionEvent event) { 
+					MainFrame.this.formulaID = ID;
+				} 
+			}); 
+			radioButtonsForFormula.add(button);
+			hboxFormulaType.add(button);
+		}
+		
+		private void addRadioButtonForMemory(String buttonName, final int ID) { 
+			JRadioButton button = new JRadioButton(buttonName);
+			button.addActionListener(new ActionListener() { 
+				public void actionPerformed(ActionEvent event) { 
+					MainFrame.this.memID = ID;
+					switch (memID) {
+					case 1: textFieldMemory.setText(mem1.toString()); break;
+					case 2: textFieldMemory.setText(mem2.toString()); break;
+					case 3: textFieldMemory.setText(mem3.toString()); break;
+					}
+				} 
+			}); 
+			radioButtonsForMemory.add(button);
+			hboxMemoryType.add(button);
+		}
+		
 		
 	public static void main(String[] args) {
 		MainFrame frame = new MainFrame();
