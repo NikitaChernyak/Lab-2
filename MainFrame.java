@@ -171,6 +171,68 @@ public class MainFrame extends JFrame {
 			hboxResult.add(textFieldResult);
 			hboxResult.add(Box.createHorizontalGlue());
 			hboxResult.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+			
+			//Область для кнопок
+			
+			JButton buttonCalculate = new JButton("Вычислить");
+			buttonCalculate.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent event) {
+				try {
+					Double x = Double.parseDouble(textFieldX.getText());
+					Double y = Double.parseDouble(textFieldY.getText());
+					Double z = Double.parseDouble(textFieldZ.getText());
+					Double result;
+					if (formulaID == 1)
+						result = calculate_formula1(x, y, z);
+					else
+						result = calculate_formula2(x, y, z);
+					textFieldResult.setText(result.toString());
+				} catch (NumberFormatException exeption) {
+					JOptionPane.showMessageDialog(MainFrame.this, "Ошибка в формате записи числа с плавающей точкой", "Ошибочный формат числа", JOptionPane.WARNING_MESSAGE);
+				}
+			}
+			});
+			
+			JButton buttonMPlus = new JButton("M+");
+			buttonMPlus.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent event) {
+					Double result = Double.parseDouble(textFieldResult.getText());
+					switch (memID) {
+					case 1: mem1 += result;
+							textFieldMemory.setText(mem1.toString());
+							break;
+					case 2:	mem2 += result;
+							textFieldMemory.setText(mem2.toString());
+							break;
+					case 3:	mem3 += result;
+							textFieldMemory.setText(mem3.toString());
+							break;
+					}
+				}
+			});
+			
+			JButton buttonMC = new JButton("MC");
+			buttonMC.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent event) {
+					switch (memID) {
+					case 1: mem1 = 0.0; break;
+					case 2:	mem2 = 0.0; break;
+					case 3:	mem3 = 0.0; break;
+					}
+					textFieldMemory.setText("0");
+				}
+			});
+			
+			JButton buttonReset = new JButton("Очистить поля");
+			buttonReset.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent event) {
+					textFieldX.setText("0");
+					textFieldY.setText("0");
+					textFieldZ.setText("0");
+					textFieldResult.setText("0");
+				}
+			});
+	}
 		
 	public static void main(String[] args) {
 		MainFrame frame = new MainFrame();
