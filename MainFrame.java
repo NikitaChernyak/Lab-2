@@ -90,6 +90,88 @@ public class MainFrame extends JFrame {
 		}
 		
 		
+		//Конструктор класса
+		public MainFrame() {
+			
+			super("Вычисление формулы");
+			setSize(WIDTH, HEIGHT);
+			Toolkit kit = Toolkit.getDefaultToolkit();
+			//Отцентрировать окно приложения на экране
+			setLocation((kit.getScreenSize().width - WIDTH)/2, (kit.getScreenSize().height - HEIGHT)/2);
+			
+			//Контейнер для выбора формулы
+			hboxFormulaType.add(Box.createHorizontalGlue());
+			addRadioButtonForFormula("Формула 1", 1);
+			hboxFormulaType.add(Box.createHorizontalStrut(20));
+			addRadioButtonForFormula("Формула 2", 2);
+			radioButtonsForFormula.setSelected(radioButtonsForFormula.getElements().nextElement().getModel(), true);
+			hboxFormulaType.add(Box.createHorizontalGlue());
+			hboxFormulaType.setBorder(BorderFactory.createLineBorder(Color.YELLOW));
+			
+			//Контейнер для выбора переменной
+			hboxMemoryType.add(Box.createHorizontalGlue());
+			addRadioButtonForMemory("Переменная 1", 1);
+			hboxMemoryType.add(Box.createHorizontalStrut(20));
+			addRadioButtonForMemory("Переменная 2", 2);
+			hboxMemoryType.add(Box.createHorizontalStrut(20));
+			addRadioButtonForMemory("Переменная 3", 3);
+			hboxMemoryType.add(Box.createHorizontalGlue());
+			radioButtonsForMemory.setSelected(radioButtonsForMemory.getElements().nextElement().getModel(), true);
+			hboxMemoryType.add(Box.createVerticalGlue());
+			hboxMemoryType.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+			
+			//Область для вывода значения переменной
+			textFieldMemory = new JTextField("0", 15);
+			textFieldMemory.setMaximumSize(textFieldMemory.getPreferredSize());
+		
+			Box hboxMemoryValue = Box.createHorizontalBox();
+			hboxMemoryValue.add(Box.createHorizontalGlue());
+			hboxMemoryValue.add(Box.createVerticalGlue());
+			hboxMemoryValue.add(textFieldMemory);
+			hboxMemoryValue.add(Box.createHorizontalGlue());
+			hboxMemoryValue.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+			
+			//Область с полями ввода для X, Y, Z
+			JLabel labelForX = new JLabel("X:");
+			textFieldX = new JTextField("0", 10);
+			textFieldX.setMaximumSize(textFieldX.getPreferredSize());
+			JLabel labelForY = new JLabel("Y:");
+			textFieldY = new JTextField("0", 10);
+			textFieldY.setMaximumSize(textFieldY.getPreferredSize());
+			JLabel labelForZ = new JLabel("Z:");
+			textFieldZ = new JTextField("0", 10);
+			textFieldZ.setMaximumSize(textFieldZ.getPreferredSize());
+			
+			Box hboxXYZ = Box.createHorizontalBox();
+			hboxXYZ.setBorder(BorderFactory.createLineBorder(Color.RED));
+			hboxXYZ.add(Box.createHorizontalGlue());
+			hboxXYZ.add(Box.createHorizontalStrut(10));
+			hboxXYZ.add(labelForX);
+			hboxXYZ.add(Box.createHorizontalStrut(10));
+			hboxXYZ.add(textFieldX);
+			hboxXYZ.add(Box.createHorizontalStrut(50));
+			hboxXYZ.add(labelForY);
+			hboxXYZ.add(Box.createHorizontalStrut(10));
+			hboxXYZ.add(textFieldY);
+			hboxXYZ.add(Box.createHorizontalStrut(50));
+			hboxXYZ.add(labelForZ);
+			hboxXYZ.add(Box.createHorizontalStrut(10));
+			hboxXYZ.add(textFieldZ);
+			hboxXYZ.add(Box.createHorizontalStrut(10));
+			hboxXYZ.add(Box.createHorizontalGlue());
+			
+			//Создать область для вывода результата
+			JLabel labelForResult = new JLabel("Результат:");
+			textFieldResult = new JTextField("0", 15);
+			textFieldResult.setMaximumSize(textFieldResult.getPreferredSize());
+			Box hboxResult = Box.createHorizontalBox();
+			hboxResult.add(Box.createHorizontalGlue());
+			hboxResult.add(labelForResult);
+			hboxResult.add(Box.createHorizontalStrut(10));
+			hboxResult.add(textFieldResult);
+			hboxResult.add(Box.createHorizontalGlue());
+			hboxResult.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+		
 	public static void main(String[] args) {
 		MainFrame frame = new MainFrame();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
