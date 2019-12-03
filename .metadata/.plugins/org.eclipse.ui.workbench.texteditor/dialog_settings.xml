@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="false"/>
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<item key="selection" value="setSelected"/>
+		<list key="findhistory">
+			<item value="setSelected"/>
+			<item value="addRadioButton"/>
+			<item value="hboxVariableType"/>
+			<item value="formulaId"/>
+			<item value="varId"/>
+			<item value="radioButtonsForVariables"/>
+			<item value="hboxVariables"/>
+			<item value="radioButtonsForFormula"/>
+			<item value="radioButtons"/>
+			<item value="radio"/>
+			<item value="calculate2"/>
+			<item value="calculate1"/>
+		</list>
+		<list key="replacehistory">
+			<item value="addRadioButtonForFormula"/>
+			<item value="hboxMemoryType"/>
+			<item value="formulaID"/>
+			<item value="memID"/>
+			<item value="radioButtonsForMemory"/>
+			<item value="radioButtonsForMem"/>
+			<item value="hboxXYZ"/>
+			<item value="radioButtonsForFormula"/>
+			<item value="calculate_formula2"/>
+			<item value="calculate_formula1"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="969"/>
+		<item key="DIALOG_Y_ORIGIN" value="67"/>
+		<item key="DIALOG_WIDTH" value="348"/>
+		<item key="DIALOG_HEIGHT" value="440"/>
+		<item key="DIALOG_FONT_NAME" value="1|Ubuntu|11.0|0|GTK|1|"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="409"/>
+		<item key="DIALOG_Y_ORIGIN" value="228"/>
+	</section>
+</section>
